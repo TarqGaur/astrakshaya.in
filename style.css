@@ -1,0 +1,364 @@
+.timer {
+    font-size: 200px;
+    color: aliceblue;
+    position: absolute;
+    font-family: monospace;
+    font-family: "Karla", sans-serif;
+    bottom: -50px;
+    position: fixed;
+
+    animation: scrollAnimation 1s both;
+    animation-timeline: scroll();
+    /* animation-timeline-axis: block;  */
+    z-index: 100;
+}
+.soon{
+    font-size: 30px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    font-family: monospace;
+    font-family: "Karla", sans-serif;
+    animation: scrollAnimation3 1s both;
+    animation-timeline: scroll();
+    z-index: 100;
+    /* top: 30px; */
+    width: 90%;
+    margin-top: -50px;
+}
+
+@keyframes scrollAnimation {
+    from {
+        transform: scale(1) translateX(0px) translateY(0px);
+    }
+
+    to {
+        transform: scale(0.3) translateX(1200px) translateY(-100px);
+    }
+}
+@keyframes scrollAnimation3 {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+
+    }
+}
+
+.timersec {
+    font-size: 20px;
+    color: aliceblue;
+    font-family: monospace;
+    font-family: "Karla", sans-serif;
+    font-weight: 100;
+}
+
+body {
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+    /* scroll-snap-type: y mandatory; */
+    overflow-y: scroll;
+    zoom: 90%;
+    height: 1000px
+    
+}
+::-webkit-scrollbar {
+    display: none;
+  }
+.cont,
+.cont2 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: ; */
+    /* background-color: aliceblue; */
+    /* scroll-snap-align: start; */
+}
+
+
+@keyframes backmov {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.loader {
+    --size: 250px;
+    --duration: 2s;
+    --logo-color: grey;
+    --background: linear-gradient(0deg,
+            rgba(50, 50, 50, 0.2) 0%,
+            rgba(100, 100, 100, 0.2) 100%);
+    height: var(--size);
+    aspect-ratio: 1;
+    position: relative;
+    transform: scale(1.9);
+}
+
+.loader .box {
+    position: absolute;
+    background: rgba(100, 100, 100, 0.15);
+    background: var(--background);
+    border-radius: 50%;
+    border-top: 1px solid rgba(100, 100, 100, 1);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 10px -0px;
+    backdrop-filter: blur(5px);
+    animation: ripple var(--duration) infinite ease-in-out;
+}
+
+.loader .box:nth-child(1) {
+    inset: 40%;
+    z-index: 99;
+}
+
+.loader .box:nth-child(2) {
+    inset: 30%;
+    z-index: 98;
+    border-color: rgba(100, 100, 100, 0.8);
+    animation-delay: 0.2s;
+}
+
+.loader .box:nth-child(3) {
+    inset: 20%;
+    z-index: 97;
+    border-color: rgba(100, 100, 100, 0.6);
+    animation-delay: 0.4s;
+}
+
+.loader .box:nth-child(4) {
+    inset: 10%;
+    z-index: 96;
+    border-color: rgba(100, 100, 100, 0.4);
+    animation-delay: 0.6s;
+}
+
+.loader .box:nth-child(5) {
+    inset: 0%;
+    z-index: 95;
+    border-color: rgba(100, 100, 100, 0.2);
+    animation-delay: 0.8s;
+}
+
+.loader .logo {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    padding: 30%;
+}
+
+.loader .logo svg {
+    fill: var(--logo-color);
+    width: 100%;
+    animation: color-change var(--duration) infinite ease-in-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 10px -0px;
+    }
+
+    50% {
+        transform: scale(1.3);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 30px 20px -0px;
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 10px -0px;
+    }
+}
+
+@keyframes color-change {
+    0% {
+        fill: var(--logo-color);
+    }
+
+    50% {
+        fill: white;
+    }
+
+    100% {
+        fill: var(--logo-color);
+    }
+}
+
+/* ////////////////// */
+.loaderr {
+    width: 148px;
+    height: 148px;
+    border-radius: 50%;
+    margin: -64px auto 0;
+    background-color: #ccc;
+    background-image: radial-gradient(#fff 4px, #0000  0),
+                      radial-gradient(#fff 4px, #0000  0),
+                      radial-gradient(#fff 4px, #0000  0),
+                      radial-gradient(#fff 4px, #0000  0);
+    background-position: 24px center, 8px center, -8px center, -24px center;
+    position: absolute;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15) inset;
+    animation: flash 1s linear infinite;
+    right: 20px;
+    /* top: 110px; */
+    bottom:0;
+  }
+
+  @keyframes scrollAnimation5 {
+    from {
+        transform: scale(1) translateY(0);
+    }
+    to {
+        transform: scale(1.2) translateY(-50px);
+    }
+}
+  
+  .loaderr::before , .loaderr::after {
+    content: '';
+    position: absolute;
+    border: 1px solid #ccc;
+    border-top-color: #0000;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 18px;
+    background: #fff;
+    
+  }
+  
+  .loaderr::before {
+    width: 0px;
+    height: 200px;
+
+    /* animation: scrollAnimation4 1s both;
+    animation-timeline: scroll(); */
+    /* transform: translate(-50% , 18px); */
+  }
+
+  @keyframes scrollAnimation4 {
+    from {
+        height: 0px;
+    }
+    to {
+        height: 200px;
+    }
+}
+  
+  @keyframes flash {
+    0% {
+      background-image: radial-gradient(#DDD 4px, #0000  0),
+          radial-gradient(#DDD 4px, #0000  0),
+          radial-gradient(#DDD 4px, #0000  0),
+          radial-gradient(#DDD 4px, #0000  0);
+    }
+  
+    25% {
+      background-image: radial-gradient(#DDD 4px, #0000  0),
+        radial-gradient(#DDD 4px, #0000  0),
+        radial-gradient(#DDD 4px, #0000  0),
+        radial-gradient(#fff 4px, #0000  0);
+    }
+  
+    50% {
+      background-image: radial-gradient(#DDD 4px, #0000  0),
+        radial-gradient(#DDD 4px, #0000  0),
+        radial-gradient(#fff 4px, #0000  0),
+        radial-gradient(#fff 4px, #0000  0);
+    }
+  
+    75% {
+      background-image: radial-gradient(#DDD 4px, #0000  0),
+          radial-gradient(#fff 4px, #0000  0),
+          radial-gradient(#fff 4px, #0000  0),
+          radial-gradient(#fff 4px, #0000  0);
+    }
+  
+    100% {
+      background-image: radial-gradient(#fff 4px, #0000  0),
+          radial-gradient(#fff 4px, #0000  0),
+          radial-gradient(#fff 4px, #0000  0),
+          radial-gradient(#fff 4px, #0000  0);
+    }
+  }
+
+
+
+
+
+  @media only screen and (max-width: 767px) {
+ 
+
+   
+
+    .soon {
+      
+        transform: translateX(0);
+    }
+
+    .loader {
+        --size: 150px;
+        transform: scale(1.2);
+    }
+
+    .loaderr {
+        width: 100px;
+        height: 100px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+   
+    
+    @keyframes scrollAnimation3 {
+        from {
+            transform: scale(0);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    .timer {
+        font-size: 65px;
+        position: absolute;
+        bottom: 20px;
+        /* bottom: 20px;sss
+        left: 50%; */
+        /* transform: translateX(-50%); */
+        animation: none;
+    }
+
+    .soon {
+        font-size: 18px;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .loader {
+        --size: 300px;
+        transform: scale(1);
+    }
+
+    .timersec {
+        font-size: 16px;
+    }
+
+}
